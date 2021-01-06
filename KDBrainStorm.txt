@@ -1,0 +1,27 @@
+Constructor
+- set root to first Point in List<Point>
+- loop through points:
+    - check if pX > rootX
+    - if greater:
+        -check if pX > root.greaterX
+        -if greater:
+            -check if pX > root.greater.greaterX
+    * have method that compares Xs against each other
+    -> if greater, have a greater method and make recursive call to Ys compare method
+    -> if less, have a lesser method and make recursive calls to Ys compare method
+
+    * have method that compares Ys against each other
+    -> if greater, have a greater method that makes a recursive call to Xs compare method
+    ->if less, have a lesser method that makes recursive call to Xs
+
+- know wether to compare points' Xs or Ys based on node's orientation
+- once you have found point's rightful place, add it to KDTree
+
+Nearest
+- compute distance btw root point and given point
+- compute distance btw child points and given point and see which is smallest -> start traversing that side of tree
+- keep track of the point that has the smallest distance seen so far
+- once you have picked a side to traverse, make a call to nearest helper method
+- keep making recursive calls to helper method until hit a leaf -> now going to start traveling back up
+- make a method that checks to see if there could be something better on the "bad side" of a node -> if not, prune node
+-
